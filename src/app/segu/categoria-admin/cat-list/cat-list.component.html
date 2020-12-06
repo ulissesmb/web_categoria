@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="text-left">Categoria</th>
+            <th class="text-right"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let categoria of categorias">
+            <td>{{ categoria.nome }}</td>
+            <td class="text-right">
+              <a class="btn btn-sm primary" title="Editar" (click)="editar(categoria)">Editar<i class="fa fa-pencil"></i></a>
+              <a class="btn btn-sm danger" title="Remover" (click)="remover(categoria)" >Excluir<i class="fa fa-remove"></i></a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

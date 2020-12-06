@@ -1,0 +1,29 @@
+<!--INICIO DO CONTEUDO-->
+<section class="content-header">
+  </section>
+  
+  <section class="content">
+    <section class="invoice">
+
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+              <h2 class="page-header">
+                <i class="fa fa-cog"></i> Gerenciar Categoria
+              </h2>
+            </div>
+          </div>
+
+          <!-- componente de cadastro-->
+        <app-cat-form [categoriaForm]="categoriaForm" [isValid]="isValid" (saveCategoria)="cadastrar($event)"></app-cat-form>
+        
+        <div class="row">
+          <div class="col-xs-12 col-md-12 col-sm-12">
+            <p class="lead">Abaixo registro(s) de Categoria(s)</p>
+          </div>
+        </div>
+
+          <!-- componente de listar-->
+          <app-cat-list [categorias]="categorias" (editCategoria)="editar($event)" (removeCategoria)="remover($event)"></app-cat-list>
+        
+    </section>
+  </section>

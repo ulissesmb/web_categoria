@@ -1,0 +1,29 @@
+
+  <form [formGroup]="categoriaForm">
+  <div class="row">
+  <div class="col-sm-12 col-xs-12 col-md-6">
+    <app-input-container errorMessage="Campo obrigatório e com 4 caracteres" label="categoria" 
+    [showTip]=false>
+      <input type="text" formControlName="categoriaName" name="categoriaName"
+       placeholder="Informe a Categoria"  class="form-control"  
+      minlength="3" maxlength="30" autocomplete="false">
+      <div *ngIf="form.categoriaName.invalid && (form.categoriaName.dirty || form.categoriaName.touched)" class="alert alert-danger">
+          <div *ngIf="form.categoriaName.errors.required">
+            Campo obrigatório.
+          </div>
+          <div *ngIf="form.categoriaName.errors.minlength">
+              Minimo de caracter permitido é 3
+          </div>
+          <div *ngIf="form.categoriaName.errors.pattern">
+              Formato invalido, por favor user letras [a-zA-Z]
+          </div>
+        </div>
+    </app-input-container>
+  </div>
+
+  <div class="col-sm-12 col-xs-12 col-md-6">
+    <button  class="btn btn-success btn-space" (click)="salvar()" [disabled]="isValid"><i class="fa fa-check"></i> Salvar</button>
+    <button  class="btn btn-danger" (click)="limpar()"><i class="fa fa-close"></i> Limpar</button>
+  </div>
+  </div>
+</form>
